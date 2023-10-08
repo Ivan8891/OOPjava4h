@@ -18,7 +18,7 @@ class TeacherController{
         return txt;
     }
     public void createTeacher() {
-        Teacher teacher = new Teacher(inputString("Введите имя: "), inputNumber("Введите возраст: "), inputNumber("Введите номер телефона: "));
+        Teacher teacher = new Teacher(inputString("Введите имя: "), inputNumber("Введите возраст: "), inputNumber("Введите 3-значный номер телефона: "));
         if (TeacherServis.ageCheck(teacher.getAge())) {
             if (TeacherServis.phoneCheck(teacher.getPhone())){
                 Teacher.setCount(Teacher.getCount()+1);
@@ -43,7 +43,7 @@ class TeacherController{
         else System.out.println("\nОшибка - некоректный возраст");
     }
     public void editorPhone(int index){
-        int phone = inputNumber("Введите другой номер: ");
+        int phone = inputNumber("Введите 3-значный номер: ");
         if(TeacherServis.phoneCheck(phone)){
             teacherGroup.get(index).setPhone(phone);
             System.out.println("Сохранено.");
