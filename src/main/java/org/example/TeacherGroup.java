@@ -12,7 +12,11 @@ public class TeacherGroup <T extends Teacher>{
     }
     public void removeTeacher(T teacher){
         group.remove(teacher);
-    }
+        int index = 1;
+         for(T t: group){
+             t.setIndex(index);
+             index++;
+         }    }
     public T get(int index){
         return group.get(index);
     }
